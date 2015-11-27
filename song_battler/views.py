@@ -5,7 +5,7 @@ from models_helper import *
 
 
 def landing_page_view(request):
-    return HttpResponse('<h1> Landing Page </h1>')
+    return render(request, 'home.html', {})
 
 
 def song_battle_view(request):
