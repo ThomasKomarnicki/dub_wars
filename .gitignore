@@ -1,3 +1,4 @@
 *.pyc
 node_modules/
 assets/admin/
+step_battle/static/song_battler/assets/admin/

@@ -1,10 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import User, AnonymousUser
 
 
 class UserProfile(models.Model):
-    ip_address = models.CharField(max_length=24)
+    ip_address = models.GenericIPAddressField()
     session_key = models.CharField(max_length=128)
+    user_type = models.IntegerField() # 1 for anonymous, 2 for registered
+    email = models.EmailField()
+    password = models.CharField(max_length=128)
+
 
 
 class Song(models.Model):
