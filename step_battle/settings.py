@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'step_battle.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['assets/templates/'],
+        'DIRS': ['song_battler/static/song_battler/assets/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,4 +107,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'assets/'
+STATIC_ROOT = 'song_battler/static/'
+STATICFILES_DIRS = (
+  os.path.join(SITE_ROOT, 'static'),
+)

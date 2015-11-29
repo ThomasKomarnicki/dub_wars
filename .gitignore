@@ -2,3 +2,5 @@
 node_modules/
 assets/admin/
 step_battle/static/song_battler/assets/admin/
+song_battler/static/song_battler/assets/admin/
+song_battler/static/admin/

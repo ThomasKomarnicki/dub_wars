@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <link rel="stylesheet" href="static/song_battler/assets/css/main.css" />
+  <link rel="stylesheet" href="static/song_battler/assets/bootstrap/css/bootstrap.min.css" /> -->
+
+
+  <link rel="stylesheet" href="{% static "song_battler/assets/css/main.css" %}" />
+  <link rel="stylesheet"  href="{% static "song_battler/assets/bootstrap/css/bootstrap.min.css" %}"/>
+  <script type = "text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"/>
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <header>
+  </header>
+
+
+  <div id="content">
+      {% block content %}{% endblock %}
+  </div>
+
+  <footer>
+  </footer>
+</body>
+</html>
