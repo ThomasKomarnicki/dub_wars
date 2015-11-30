@@ -7,3 +7,10 @@ function load_youtube(left_id, left_video_id, right_id, right_video_id){
   atts = {id: right_id + "_player" };
   swfobject.embedSWF("http://www.youtube.com/v/" + right_video_id + "?enablejsapi=1&playerapiid=ytplayer&version=3", left_id, "425", "356", "8", null, null, params, atts);
 }
+
+$(window).ready(function(){
+  $.getJSON( "api/v1/battle/new", function( data ){
+    console.log(data);
+  })
+
+})
