@@ -1,5 +1,5 @@
 from django.db import models
-
+import urlparse
 
 class UserProfile(models.Model):
     ip_address = models.GenericIPAddressField(blank=True,null=True)
@@ -15,12 +15,20 @@ class UserProfile(models.Model):
 class Song(models.Model):
 
     url = models.URLField()
+    song_id = models.CharField(max_length=32)
     wins = models.IntegerField(default=0)
     losses = models.IntegerField(default=0)
     name = models.CharField(max_length=256)
 
     def __str__(self):
         return str(self.name)
+
+    def save(self, **kwargs):
+        if not self.song_id:
+            self.song_id = get_youtube_id_from_url(self.url)
+        super(Song, self).save(**kwargs)
+
+
 
 
 class SongBattle(models.Model):
@@ -34,3 +42,7 @@ class SongBattle(models.Model):
         return "{ id = " + str(self.id) + ", winnner = " + str(self.winner) + " }"
 
 
+def get_youtube_id_from_url(url):
+    parsed = urlparse.urlparse(url)
+    video_id = urlparse.parse_qs(parsed.query)['v']
+    return video_id;

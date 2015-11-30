@@ -19,7 +19,7 @@ class SongResource(ModelResource):
     class Meta:
         queryset = Song.objects.all()
         resource_name = 'song'
-        fields = ['id' , 'name', 'url']
+        fields = ['id' , 'name', 'url', 'song_id']
 
 
 class SongBattleResource(ModelResource):
