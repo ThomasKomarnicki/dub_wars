@@ -24,10 +24,10 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ["assets/css"]
+          paths: ["song_battler/static/song_battler/assets/css"]
         },
         files: {
-          "assets/css/main.css": "assets/less/main.less"
+          "song_battler/static/song_battler/assets/css/main.css": "song_battler/static/song_battler/assets/less/main.less"
         }
       },
       /*production: {
@@ -77,8 +77,8 @@ module.exports = function(grunt) {
     watch: {
       less: {
         files: [
-          'assets/less/*.less',
-          'assets/less/**/*.less'
+          'song_battler/static/song_battler/assets/less/*.less',
+          'song_battler/static/song_battler/assets/less/**/*.less'
         ],
         tasks: ['less']
       },

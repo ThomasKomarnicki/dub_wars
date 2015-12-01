@@ -9,3 +9,28 @@ footer {
   height: 100px;
   background-color: black;
 }
+.youtube-holder {
+  text-align: center;
+  margin-top: 40px;
+}
+.youtube-holder > div {
+  height: 356px;
+}
+.youtube-holder > object {
+  height: 356px;
+}
+.song-title {
+  padding: 10px;
+}
+.choose-button {
+  margin: 40px auto;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: white;
+  background-color: darkgrey;
+  display: block;
+}
+.choose-button:hover {
+  background-color: darkslategrey;
+}
