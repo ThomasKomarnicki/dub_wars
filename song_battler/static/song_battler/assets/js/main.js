@@ -1,3 +1,5 @@
+var current_battle_id = -1;
+
 function load_youtube(left_id, left_video_id, right_id, right_video_id){
 
   var params = { allowScriptAccess: "always" };
@@ -16,6 +18,7 @@ function set_song_titles(left_song_title, right_song_title){
 function get_new_battle(){
   $.getJSON( "api/v1/battle/new", function( data ){
     console.log(data);
+    current_battle_id = data.id;
     left_id = "left_youtube_container";
     left_video_id = data.left_song.song_id;
     right_id = "right_youtube_container";
@@ -27,9 +30,20 @@ function get_new_battle(){
 
 function submit_battle_winner(battle_id, winner ){
 
-  $.post( "api/v1/battle/0/winner", { id: battle_id, winner: winner })
+  endpoint = "api/v1/battle/" + battle_id + "/winner"
+  $.post( "api/v1/battle/0/winner", { winner: winner })
     .done(function( data ) {
+      console.log("set winner returned");
       console.log(data);
+      get_new_battle();
     });
 
+}
+
+function left_song_select(){
+  submit_battle_winner(current_battle_id, 1);
+}
+
+function right_song_select(){
+  submit_battle_winner(current_battle_id, 2);
 }
