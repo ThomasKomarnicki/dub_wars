@@ -1,5 +1,3 @@
-var current_battle_id = -1;
-
 function load_youtube(left_id, left_video_id, right_id, right_video_id){
 
   var params = { allowScriptAccess: "always" };
@@ -30,8 +28,13 @@ function get_new_battle(){
 
 function submit_battle_winner(battle_id, winner ){
 
-  endpoint = "api/v1/battle/" + battle_id + "/winner"
-  $.post( "api/v1/battle/0/winner", { winner: winner })
+  endpoint = "api/v1/battle/" + battle_id + "/winner/?format=json"
+  $.ajax({
+    method: "PUT",
+    contentType: "application/json",
+    dataType: "json",
+    url: endpoint,
+    data: { winner: winner }})
     .done(function( data ) {
       console.log("set winner returned");
       console.log(data);

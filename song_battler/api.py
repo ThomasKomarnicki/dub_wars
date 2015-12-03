@@ -1,11 +1,12 @@
 from tastypie.resources import ModelResource
 from tastypie import fields
-from tastypie.http import HttpForbidden
+from tastypie.http import HttpForbidden, HttpAccepted
 from tastypie.utils import trailing_slash
 from django.conf.urls import url
 from models import Song, SongBattle, UserProfile
 from models_helper import get_song_battle
 from tastypie.serializers import Serializer
+from django.http import QueryDict
 
 
 class UserResource(ModelResource):
@@ -54,9 +55,14 @@ class SongBattleResource(ModelResource):
         # serialized = self.serialize(request, song_battle, 'application/json')
         return self.get_detail(request, pk=song_battle.id, api_name='v1', resource_name='battle')
 
-    def set_winner(self, request, **kwargs):
+    def set_winner(self, request, *args, **kwargs):
         if request.method != "PUT":
             return HttpForbidden("Only accepts PUT requests")
 
-        return self.patch_detail(request, **kwargs)
+        body = QueryDict(request.body)
+        winner = body.get('winner')
+        song_battle = SongBattle.objects.get(id=kwargs['pk'])
+        song_battle.winner = winner
+        song_battle.save()
+        return HttpAccepted()
 
