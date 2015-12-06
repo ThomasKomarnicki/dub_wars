@@ -32,3 +32,9 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+
+def get_top_songs():
+    #todo
+    songs = Song.objects.order_by('wins').all()[:20]
+    return songs

@@ -1,6 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1> HOME </h1>
+<h1> DUB WARS </h1>
+
+<div class="parallax-background">
+  <div class="large-background bg-1">
+    <div class="overlay">
+
+    </div>
+  </div>
+
+  <div class="large-background bg-2">
+    <div class="overlay">
+
+    </div>
+  </div>
+</div>
+
+<div class="home-content">
+  <div class="container">
+    <div class="row">
+      <ul>
+        {% for song in top_songs %}
+          <li>
+            <div class="number"> {{ forloop.counter }}.</div>
+            <a target="_blank" href="{{song.url}}"> {{ song.name }}</a>
+            <button class="play-button"></button>
+          </li>
+        {% endfor %}
+      </ul>
+  </div>
+</div>
 
 {% endblock %}

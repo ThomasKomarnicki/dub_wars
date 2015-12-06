@@ -3,13 +3,19 @@ body{
 }
 
 header{
-  height:200px;
+  height:120px;
   background-color: black;
 }
 
 footer{
-  height:100px;
+  height:80px;
   background-color: black;
+}
+
+h1{
+  text-align: center;
+  padding: 20px;
+  margin:0;
 }
 
 .youtube-holder{
@@ -38,6 +44,81 @@ footer{
   display: block;
 
   &:hover{
-    background-color: darkslategrey; 
+    background-color: darkslategrey;
+  }
+
+}
+
+.parallax-background{
+  overflow:hidden;
+  position: fixed;
+  height:100%;
+  width:100%;
+  z-index: -1;
+}
+
+.large-background{
+  height:800px;
+  width:100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .overlay{
+    background-color: rgba(0, 0, 0, 0.85);
+    height:100%;
+    width:100%;
+    // -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,1)));
+  }
+}
+.bg-1{
+  background-image: url('../img/ulcT4.jpg');
+}
+
+.bg-2{
+  background-image: url('../img/uNvCx67.jpg');
+}
+
+.home-content{
+  ul{
+    padding:60px 40px;
+    line-height: 40px;
+    list-style: none;
+    color: white;
+    max-width: 800px;
+    margin:auto;
+
+    .number{
+      float:left;
+      font-size: 16px;
+      margin-right: 25px;
+    }
+    .play-button{
+      position: relative;
+      width:25px;
+      height:25px;
+      background-color: white;
+      float:right;
+      margin-top:8px;
+      border:none;
+
+      &:active{
+        outline:none;
+      }
+
+    }
+  }
+
+  li{
+    padding: 12px 0px;
+    font-size: 28px;
+    display: block;
+
+    a{
+      color:white;
+
+      &:hover{
+        color:white;
+      }
+    }
   }
 }

@@ -1,8 +1,10 @@
 from django.shortcuts import render
+import models_helper as mh
 
 
 def landing_page_view(request):
-    return render(request, 'home.html', {})
+    songs = mh.get_top_songs()
+    return render(request, 'home.html', {'top_songs': songs})
 
 
 def song_battle_view(request):

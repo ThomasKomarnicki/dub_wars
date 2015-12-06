@@ -2,12 +2,17 @@ body {
   background-color: grey;
 }
 header {
-  height: 200px;
+  height: 120px;
   background-color: black;
 }
 footer {
-  height: 100px;
+  height: 80px;
   background-color: black;
+}
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
 }
 .youtube-holder {
   text-align: center;
@@ -33,4 +38,64 @@ footer {
 }
 .choose-button:hover {
   background-color: darkslategrey;
+}
+.parallax-background {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.large-background {
+  height: 800px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.large-background .overlay {
+  background-color: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  width: 100%;
+}
+.bg-1 {
+  background-image: url('../img/ulcT4.jpg');
+}
+.bg-2 {
+  background-image: url('../img/uNvCx67.jpg');
+}
+.home-content ul {
+  padding: 60px 40px;
+  line-height: 40px;
+  list-style: none;
+  color: white;
+  max-width: 800px;
+  margin: auto;
+}
+.home-content ul .number {
+  float: left;
+  font-size: 16px;
+  margin-right: 25px;
+}
+.home-content ul .play-button {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  float: right;
+  margin-top: 8px;
+  border: none;
+}
+.home-content ul .play-button:active {
+  outline: none;
+}
+.home-content li {
+  padding: 12px 0px;
+  font-size: 28px;
+  display: block;
+}
+.home-content li a {
+  color: white;
+}
+.home-content li a:hover {
+  color: white;
 }
