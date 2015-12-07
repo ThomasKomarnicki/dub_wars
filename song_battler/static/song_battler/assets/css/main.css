@@ -77,16 +77,24 @@ h1 {
   margin-right: 25px;
 }
 .home-content ul .play-button {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  background-color: white;
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px;
+  background-color: transparent;
+  border: none;
+  background-image: url('../img/ic_play_arrow_white_24px.svg');
   float: right;
   margin-top: 8px;
-  border: none;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+  -o-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
 }
 .home-content ul .play-button:active {
   outline: none;
+}
+.home-content ul .play-button.opened {
+  transform: rotate(90deg);
 }
 .home-content li {
   padding: 12px 0px;

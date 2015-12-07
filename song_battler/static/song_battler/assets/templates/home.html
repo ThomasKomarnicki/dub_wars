@@ -25,7 +25,8 @@
           <li>
             <div class="number"> {{ forloop.counter }}.</div>
             <a target="_blank" href="{{song.url}}"> {{ song.name }}</a>
-            <button class="play-button"></button>
+             <!-- <i class="material-icons play-button">play-arrow</i> -->
+             <button class="play-button" onclick="on_list_item_play();"> </button>
           </li>
         {% endfor %}
       </ul>

@@ -40,22 +40,26 @@ function right_song_select(){
 
 function get_left_yt_player(){
   player = document.getElementById("left_youtube_container_player");
-  // player = new YT.Player('left_youtube_container_player', {
-  //   events: {
-  //     // 'onReady': onPlayerReady,
-  //     // 'onStateChange': onPlayerStateChange
-  //   }
-  // });
   return player;
 }
 
 function get_right_yt_player(){
   player = document.getElementById("right_youtube_container_player");
-  // player = new YT.Player('right_youtube_container_player', {
-  //   events: {
-  //     // 'onReady': onPlayerReady,
-  //     // 'onStateChange': onPlayerStateChange
-  //   }
-  // });
   return player;
+}
+
+function on_list_item_play(){
+// todo
+  if($(this).hasClass("opened")){
+    // close
+    $(this).removeClass("opened");
+
+  }else{
+    // open
+    $("play-button").removeClass("opened");
+    $(this).addClass("opened");
+
+    //
+  }
+
 }

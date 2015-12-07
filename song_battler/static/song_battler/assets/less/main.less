@@ -93,16 +93,27 @@ h1{
       margin-right: 25px;
     }
     .play-button{
-      position: relative;
-      width:25px;
-      height:25px;
-      background-color: white;
+      // position: relative;
+      width:32px;
+      height:32px;
+      background-size: 32px 32px;
+      background-color: transparent;
+      border:none;
+      background-image: url('../img/ic_play_arrow_white_24px.svg');
       float:right;
       margin-top:8px;
-      border:none;
+
+      -webkit-transition: .5s ease-in;
+      -moz-transition: .5s ease-in;
+      -o-transition: .5s ease-in;
+      transition: .5s ease-in;
 
       &:active{
         outline:none;
+      }
+
+      &.opened{
+        transform: rotate(90deg);
       }
 
     }
