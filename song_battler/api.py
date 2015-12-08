@@ -6,7 +6,7 @@ from django.conf.urls import url
 from models import Song, SongBattle, UserProfile
 from models_helper import get_song_battle
 from tastypie.serializers import Serializer
-from django.http import QueryDict
+from django.http import QueryDict, HttpResponse
 
 
 class UserResource(ModelResource):
@@ -20,7 +20,25 @@ class SongResource(ModelResource):
     class Meta:
         queryset = Song.objects.all()
         resource_name = 'song'
-        fields = ['id' , 'name', 'url', 'song_id']
+        fields = ['id', 'name', 'url', 'song_id']
+
+    def prepend_urls(self):
+        """ Add the following array of urls to the GameResource base urls """
+        return [
+            # url(r"^(?P<resource_name>%s)/search%s/$" % (self._meta.resource_name, trailing_slash()),
+            #     self.wrap_view('search'), name="search"),
+            url(r"^search/(?P<query>\w*)%s$" % (trailing_slash()),
+                self.wrap_view('search'), name="search"),
+        ]
+
+    def search(self, request, query, **kwargs):
+        filtered_songs = Song.objects.filter(name__icontains=query).all()
+        # print filtered_songs
+        bundles = [self.build_bundle(obj=q, request=request) for q in filtered_songs]
+        data = [self.full_dehydrate(bundle) for bundle in bundles]
+        serialized_data = self.serialize(None, data, 'application/json')
+        return HttpResponse(content=serialized_data)
+
 
 
 class SongBattleResource(ModelResource):
