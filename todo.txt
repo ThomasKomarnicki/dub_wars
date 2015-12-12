@@ -6,9 +6,15 @@ Header / navigation
     Add song page (maybe)
 Home page / battle page background...
 Color scheme / look and feel
+Tablet mobile design
 
 
 More detailed Models for songs, add artist, album
 
 Rewards for doing song battles ??? 
+See how other people chose the same battle after submitting
+
+Gather most popular artists albums on front page
+
+Ability to add songs from youtube
 
