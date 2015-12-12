@@ -1,0 +1,14 @@
+Animation for transitioning between song battle
+Header / navigation 
+    Home page
+    Battle page
+    Search page
+    Add song page (maybe)
+Home page / battle page background...
+Color scheme / look and feel
+
+
+More detailed Models for songs, add artist, album
+
+Rewards for doing song battles ??? 
+
