@@ -50,16 +50,31 @@ function get_right_yt_player(){
 
 function on_list_item_play(){
 // todo
-  if($(this).hasClass("opened")){
+  button = $(event.target);
+  $(".list-youtube-holder").removeClass("visible");
+  if(button.hasClass("opened")){
     // close
-    $(this).removeClass("opened");
+    button.removeClass("opened");
 
   }else{
     // open
-    $("play-button").removeClass("opened");
-    $(this).addClass("opened");
+    $(".play-button").removeClass("opened");
+    button.addClass("opened");
+    var list_youtube_holder = button.parent().children(".list-youtube-holder").eq(0);
+    list_youtube_holder.addClass("visible");
+    addYoutubeToListHolder(list_youtube_holder);
 
-    //
   }
 
+}
+
+function addYoutubeToListHolder(list_youtube_holder){
+  $(".list-youtube-holder-inner").removeAttr("id");
+  list_youtube_holder.children(".list-youtube-holder-inner").attr('id', 'list-youtube-current');
+  video_id = list_youtube_holder.attr("data-video-id");
+
+  var params = { allowScriptAccess: "always" };
+  var atts = { id: "list-youtube-current-inner" };
+  // swfobject.removeSWF("list-youtube-current-inner");
+  swfobject.embedSWF("http://www.youtube.com/v/" + video_id + "?enablejsapi=1&playerapiid=ytplayer&version=3", "list-youtube-current", "425", "356", "8", null, null, params, atts);
 }

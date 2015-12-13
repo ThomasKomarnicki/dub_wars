@@ -1,3 +1,5 @@
+@font-family-Audiowide: 'Audiowide';
+
 body{
   background-color: grey;
 }
@@ -16,6 +18,7 @@ h1{
   text-align: center;
   padding: 20px;
   margin:0;
+  font-family: @font-family-Audiowide !important;
 }
 
 .youtube-holder{
@@ -55,6 +58,8 @@ h1{
   height:100%;
   width:100%;
   z-index: -1;
+  top: 0;
+  bottom:0;
 }
 
 .large-background{
@@ -79,6 +84,9 @@ h1{
 }
 
 .home-content{
+  h1{
+    margin-top:0;
+  }
   ul{
     padding:60px 40px;
     line-height: 40px;
@@ -103,10 +111,10 @@ h1{
       float:right;
       margin-top:8px;
 
-      -webkit-transition: .5s ease-in;
-      -moz-transition: .5s ease-in;
-      -o-transition: .5s ease-in;
-      transition: .5s ease-in;
+      -webkit-transition: .75s ease-in;
+      -moz-transition: .75s ease-in;
+      -o-transition: .75s ease-in;
+      transition: .75s ease-in;
 
       &:active{
         outline:none;
@@ -132,4 +140,24 @@ h1{
       }
     }
   }
+}
+
+.list-youtube-holder{
+  width:100%;
+  height:0px;
+  overflow: hidden;
+  text-align: center;
+
+  -webkit-transition: .5s ease-in;
+  -moz-transition: .5s ease-in;
+  -o-transition: .5s ease-in;
+  transition: .5s ease-in;
+
+  > object{
+    margin-top: 20px;
+  }
+}
+
+.list-youtube-holder.visible{
+  height:375px;
 }

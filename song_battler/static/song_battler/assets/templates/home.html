@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1> DUB WARS </h1>
 
 <div class="parallax-background">
   <div class="large-background bg-1">
@@ -18,16 +17,22 @@
 </div>
 
 <div class="home-content">
+  <h1> DUB WARS </h1>
   <div class="container">
     <div class="row">
       <ul>
-        {% for song in top_songs %}
-          <li>
-            <div class="number"> {{ forloop.counter }}.</div>
-            <a target="_blank" href="{{song.url}}"> {{ song.name }}</a>
-             <!-- <i class="material-icons play-button">play-arrow</i> -->
-             <button class="play-button" onclick="on_list_item_play();"> </button>
-          </li>
+        {% for i in "xxx" %}
+          {% for song in top_songs %}
+            <li>
+              <div class="number"> {{ forloop.counter }}.</div>
+              <a target="_blank" href="{{song.url}}"> {{ song.name }}</a>
+               <!-- <i class="material-icons play-button">play-arrow</i> -->
+               <button class="play-button" onclick="on_list_item_play();"> </button>
+               <div class="list-youtube-holder"  data-video-id="{{ song.song_id}}">
+                 <div class="list-youtube-holder-inner"></div>
+               </div>
+            </li>
+          {% endfor %}
         {% endfor %}
       </ul>
   </div>
