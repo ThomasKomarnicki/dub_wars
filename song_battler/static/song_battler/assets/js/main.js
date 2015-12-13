@@ -48,10 +48,23 @@ function get_right_yt_player(){
   return player;
 }
 
+function get_home_list_yt_player(){
+  player = document.getElementById("list-youtube-current-inner");
+  return player;
+}
+
+function pause_home_list_yt_player(){
+  yt_player = get_home_list_yt_player();
+  if(yt_player != null){
+    yt_player.pauseVideo();
+  }
+}
+
 function on_list_item_play(){
 // todo
   button = $(event.target);
   $(".list-youtube-holder").removeClass("visible");
+  pause_home_list_yt_player();
   if(button.hasClass("opened")){
     // close
     button.removeClass("opened");
@@ -62,6 +75,7 @@ function on_list_item_play(){
     button.addClass("opened");
     var list_youtube_holder = button.parent().children(".list-youtube-holder").eq(0);
     list_youtube_holder.addClass("visible");
+
     addYoutubeToListHolder(list_youtube_holder);
 
   }
