@@ -1,24 +1,38 @@
-@font-family-Audiowide: 'Audiowide';
+@font-family-Audiowide: "Audiowide";
+@font-family-Roboto: "Roboto";
+
+@accent-1: #4a784f;
 
 body{
   background-color: grey;
+  font-family: @font-family-Roboto;
+}
+
+.body{
+  font-family: @font-family-Roboto;
 }
 
 header{
   height:120px;
-  background-color: black;
+  // background-color: black;
 }
 
 footer{
   height:80px;
-  background-color: black;
+  // background-color: black;
 }
 
 h1{
+
+}
+
+.header-title{
   text-align: center;
   padding: 20px;
   margin:0;
-  font-family: @font-family-Audiowide !important;
+  font-family: @font-family-Audiowide;
+  color: #969696;
+  line-height: 140px;
 }
 
 .youtube-holder{
@@ -35,6 +49,7 @@ h1{
 
 .song-title{
   padding: 10px;
+  color: @accent-1;
 }
 
 .choose-button{
@@ -45,9 +60,14 @@ h1{
   color: white;
   background-color: darkgrey;
   display: block;
+  font-family: @font-family-Audiowide;
+  font-size: 20px;
 
   &:hover{
-    background-color: darkslategrey;
+    background-color: @accent-1;
+  }
+  &:focus{
+    outline:none;
   }
 
 }
@@ -63,10 +83,16 @@ h1{
 }
 
 .large-background{
-  height:800px;
+  height:680px;
   width:100%;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
 
   .overlay{
     background-color: rgba(0, 0, 0, 0.85);
@@ -88,11 +114,12 @@ h1{
     margin-top:0;
   }
   ul{
-    padding:60px 40px;
+    // padding:60px 40px;
+    padding:60px 20px 60px 0;
     line-height: 40px;
     list-style: none;
     color: white;
-    max-width: 800px;
+    // max-width: 800px;
     margin:auto;
 
     .number{
@@ -160,4 +187,13 @@ h1{
 
 .list-youtube-holder.visible{
   height:375px;
+}
+
+.section-title{
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-size: 40px;
+  color: @accent-1;
+  font-weight: 800;
 }

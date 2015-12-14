@@ -19,8 +19,6 @@ function change_yt_songs(left_video_id, right_video_id){
     mediaContentUrl:"http://www.youtube.com/v/" + right_video_id + "?enablejsapi=1&playerapiid=ytplayer&version=3",
   });
 
-  // left_yt_player.pauseVideo();
-  // right_yt_player.pauseVideo();
 }
 
 function set_song_titles(left_song_title, right_song_title){
@@ -91,4 +89,11 @@ function addYoutubeToListHolder(list_youtube_holder){
   var atts = { id: "list-youtube-current-inner" };
   // swfobject.removeSWF("list-youtube-current-inner");
   swfobject.embedSWF("http://www.youtube.com/v/" + video_id + "?enablejsapi=1&playerapiid=ytplayer&version=3", "list-youtube-current", "425", "356", "8", null, null, params, atts);
+}
+
+function onHomeScroll(){
+  var scroll = document.body.scrollTop;
+  console.log("scroll = " + scroll);
+  // todo
+  $(".large-background").css("top", 0-(scroll/4));
 }

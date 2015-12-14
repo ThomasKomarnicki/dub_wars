@@ -1,19 +1,23 @@
 body {
   background-color: grey;
+  font-family: "Roboto";
+}
+.body {
+  font-family: "Roboto";
 }
 header {
   height: 120px;
-  background-color: black;
 }
 footer {
   height: 80px;
-  background-color: black;
 }
-h1 {
+.header-title {
   text-align: center;
   padding: 20px;
   margin: 0;
-  font-family: 'Audiowide' !important;
+  font-family: "Audiowide";
+  color: #969696;
+  line-height: 140px;
 }
 .youtube-holder {
   text-align: center;
@@ -27,6 +31,7 @@ h1 {
 }
 .song-title {
   padding: 10px;
+  color: #4a784f;
 }
 .choose-button {
   margin: 40px auto;
@@ -36,9 +41,14 @@ h1 {
   color: white;
   background-color: darkgrey;
   display: block;
+  font-family: "Audiowide";
+  font-size: 20px;
 }
 .choose-button:hover {
-  background-color: darkslategrey;
+  background-color: #4a784f;
+}
+.choose-button:focus {
+  outline: none;
 }
 .parallax-background {
   overflow: hidden;
@@ -50,10 +60,15 @@ h1 {
   bottom: 0;
 }
 .large-background {
-  height: 800px;
+  height: 680px;
   width: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  -webkit-transition: .4s;
+  -moz-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
 }
 .large-background .overlay {
   background-color: rgba(0, 0, 0, 0.85);
@@ -70,11 +85,10 @@ h1 {
   margin-top: 0;
 }
 .home-content ul {
-  padding: 60px 40px;
+  padding: 60px 20px 60px 0;
   line-height: 40px;
   list-style: none;
   color: white;
-  max-width: 800px;
   margin: auto;
 }
 .home-content ul .number {
@@ -128,4 +142,12 @@ h1 {
 }
 .list-youtube-holder.visible {
   height: 375px;
+}
+.section-title {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-size: 40px;
+  color: #4a784f;
+  font-weight: 800;
 }

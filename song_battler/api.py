@@ -68,6 +68,8 @@ class SongBattleResource(ModelResource):
         ]
 
     def get_new_battle(self, request, **kwargs):
+        request.session.save()
+        print "session_key = "+ str(request.session.session_key)
         song_battle = get_song_battle(request, request.session.session_key)
         print "got new song battle: " + str(song_battle)
         # serialized = self.serialize(request, song_battle, 'application/json')

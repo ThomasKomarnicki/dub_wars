@@ -10,6 +10,7 @@
   <link rel="stylesheet"  href="{% static "song_battler/assets/bootstrap/css/bootstrap.min.css" %}"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -22,12 +23,45 @@
   {% block head %}{% endblock %}
 </head>
 
-<body>
+<body class="body">
   <header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <a> </a>
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-4">
+            <h1 class="header-title"> DUB WARS </h1>
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+      </div>
+    </div>
   </header>
 
 
   <div id="content">
+    <div class="parallax-background">
+      <div class="large-background bg-1">
+        <div class="overlay">
+
+        </div>
+      </div>
+
+      <div class="large-background bg-2">
+        <div class="overlay">
+
+        </div>
+      </div>
+    </div>
       {% block content %}{% endblock %}
   </div>
 

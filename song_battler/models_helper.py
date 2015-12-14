@@ -35,15 +35,15 @@ class SongBattleCreator:
 
     def get_song_battle(self):
         # todo, better algorithm than random
-        # left_song = get_random_song(session_key)
-        # right_song = get_random_song(session_key, left_song.id)
-        # song_battle = SongBattle(user=user_profile, left_song=left_song, right_song=right_song)
-        # song_battle.save() # save does give it an id
-        #
-        # return song_battle
+        left_song = self.get_random_song(self.user_profile.session_key)
+        right_song = self.get_random_song(self.user_profile.session_key, left_song.id)
+        song_battle = SongBattle(user=self.user_profile, left_song=left_song, right_song=right_song)
+        song_battle.save() # save does give it an id
+
+        return song_battle
         pass
 
-    def get_random_song(session_key, ignore_id=None):
+    def get_random_song(self, session_key, ignore_id=None):
         # get song battles for user
         # pick song that has been used
         queryset = Song.objects.order_by('?')
